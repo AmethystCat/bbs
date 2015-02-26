@@ -1,3 +1,31 @@
+$(function(){
+
+	$("#sidebar").on("click","a",function(){
+		// $(this).siblings().removeClass('active');
+		// $(this).addClass('active');
+		// var tid = $(this).attr("id");
+	// 	//ajax选择查看对应类别的内容
+	// 	$.ajax({
+	// 		url: '/index.php',
+	// 		type: 'GET',
+	// 		dataType: 'json',
+	// 		data: {tid: tid},
+	// 	})
+	// 	.done(function(data) {
+	// 		console.log(data);
+	// 	})
+	// 	.fail(function() {
+	// 		console.log("error");
+	// 	})
+	// 	.always(function() {
+	// 		console.log("complete");
+	// 	});
+		
+		
+	});
+
+});
+
 function c_img(){
 	var imgT = document.getElementById("img1");
 	var selectV = document.getElementById("photo");

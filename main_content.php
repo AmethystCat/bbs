@@ -1,5 +1,9 @@
 <?php  
   session_start();
+
+  // if($_GET["action"] == "mine"){
+  //     echo "asdsadasdasdsadsa";
+  // }
 ?>
 
 <div class="col-xs-12 col-sm-9">
@@ -15,10 +19,31 @@
     <?php  
       /*首页载入时，默认查询生活类的帖子类表*/
       include "conn.php";
-      $type_id = 1;
-      $sql = "SELECT * FROM $bbs_post WHERE type_id='1' ORDER BY p_time DESC";
       mysql_query("SET NAMES UTF8");//必须设置查询编码，否则查出的中文会乱码，utf8!=utf-8
-      $result = mysql_query($sql,$my_conn);
+      if ($_GET["action"] == "mine") {
+        //如果点击我的帖子选项则查询并加载相应的内容
+        if ($_SESSION['uid']) {
+          $uid = $_SESSION['uid'];
+          $sql = "SELECT * FROM $bbs_user,$bbs_post WHERE $bbs_user.id = $bbs_post.poster_id AND $bbs_user.id = $uid ORDER BY p_time DESC";
+          $result = mysql_query($sql,$my_conn);
+        }else{
+          echo "请您先登录再查看";
+          echo "<meta http-equiv=\"refresh\" content=\"2;url=index.php\">\n";
+          // echo "<script>window.location = localhost/bbs/index.php;</script>";
+        }
+        
+      }else{
+        $type_id = $_GET['type_id'];    
+        // echo $type_id;  
+        if ($type_id) {
+          $sql = "SELECT * FROM $bbs_post WHERE type_id = $type_id ORDER BY p_time DESC";
+          // echo $sql;
+        }else{
+          $sql = "SELECT * FROM $bbs_post ORDER BY p_time DESC";
+        }
+        
+        $result = mysql_query($sql,$my_conn);
+      }
       $newest = true;// 最新文章标识
       while ($row=mysql_fetch_array($result)) {
         # code...
@@ -33,6 +58,7 @@
                 if ($newest) {
                   # code...
                   echo "(最新)";
+                  $newest = false;
                 }
               ?>
              </small>

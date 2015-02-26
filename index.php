@@ -29,7 +29,9 @@
     <![endif]-->
   </head>
   <body>
+    <!--加载header-->
     <?php include "header.php"; ?>
+    <!--header end-->
     <div class="container mt60">
       <div class="row row-offcanvas row-offcanvas-right">
         <?php 
@@ -79,5 +81,6 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
   </body>
 </html>
