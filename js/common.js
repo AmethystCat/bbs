@@ -24,6 +24,14 @@ $(function(){
 		
 	});
 
+	$(".del").click(function(){
+		if (confirm("删除帖子时同时会删除评论，是否确定要执行删除操作？")) {
+			return true;
+		}else{
+			return false;
+		}
+	});
+
 });
 
 function c_img(){

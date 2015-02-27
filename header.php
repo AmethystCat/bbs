@@ -16,9 +16,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.php?action=home">最新</a></li>
-            <li><a href="index.php?action=posting">发帖</a></li>
-            <li><a href="index.php?action=mine">我的帖子</a></li>
+            <li <?php if($_GET['action'] == "home"){echo 'class="active"';} ?>><a href="index.php?action=home">最新</a></li>
+            <li <?php if($_GET['action'] == "posting"){echo 'class="active"';} ?>><a href="index.php?action=posting">发帖</a></li>
+            <li <?php if($_GET['action'] == "mine"){echo 'class="active"';} ?>><a href="index.php?action=mine">我的帖子</a></li>
           </ul>
         <?php  
             if ($_SESSION['user']) {//如果用户已登录，则隐藏注册按钮，显示欢迎信息

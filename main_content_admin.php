@@ -17,17 +17,16 @@
           $uid = $_SESSION['uid'];
           $sql = "SELECT * FROM $bbs_user,$bbs_post WHERE $bbs_user.id = $bbs_post.poster_id AND $bbs_user.id = $uid ORDER BY p_time DESC";
           $result = mysql_query($sql,$my_conn);
-        }else{
-          echo "请您先登录再查看";
-          echo "<meta http-equiv=\"refresh\" content=\"2;url=index.php\">\n";
         }
+        
       }else{
         $type_id = $_GET['type_id'];    
         if ($type_id) {
             $sql = "SELECT * FROM $bbs_post WHERE type_id = $type_id ORDER BY p_time DESC";
         }else{
             $sql = "SELECT * FROM $bbs_post WHERE type_id != 0 ORDER BY p_time DESC";
-        }    
+        }
+        
         $result = mysql_query($sql,$my_conn);
       }
       $newest = true;// 最新文章标识
@@ -49,7 +48,10 @@
              <span class="pull-right h_time"><?php echo $row['p_time'] ?></span>
             </h2>
             <p><?php echo $row[content] ?></p>
-            <p><a class="btn btn-default" href="index.php?posts=<?php echo $row['id'] ?>" role="button">更多 &raquo;</a></p>
+            <p>
+              <a class="btn btn-default" href="index.php?posts=<?php echo $row['id'] ?>" role="button">更多 &raquo;</a>
+              <a class="btn btn-default del" href="delete.php?del=<?php echo $row['id'] ?>" role="button">删除 &raquo;</a>
+            </p>
           </div><!--row-->
         </div><!--col-xs-6 col-lg-12 mt10-->
     </div>

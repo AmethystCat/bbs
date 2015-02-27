@@ -5,16 +5,14 @@ if ($_GET['posts']) {
   include "conn.php";
   # code...
   $post_id = $_GET['posts'];
-  echo $post_id;
   $sql = "SELECT * FROM $bbs_post WHERE id='$post_id'";
   mysql_query("SET NAMES UTF8");
   $result = mysql_query($sql,$my_conn); //查询数据库
 
-  $temp = 1;//记录楼层
+  $temp = 0;//记录楼层
   while ($row=mysql_fetch_array($result)) {
     # code...
     $temp++;
-    echo "啊";
 ?>
 
 <!--设置栅格的列数为10列，列偏移为1-->
@@ -50,6 +48,7 @@ if ($_GET['posts']) {
           </div>
         </div>
         <!--以下为留言回复-->
+        <h3 style="text-align: center;">以下为留言回复</h3>
         <?php 
           if ($row['r_num']>0) {
             # code...
@@ -60,7 +59,7 @@ if ($_GET['posts']) {
             while ($row2=mysql_fetch_array($result2)) {
               ++$temp;
         ?>
-        <h3 style="text-align: center;">以下为留言回复</h3>
+        
         <div class="section-response">
           <div class="section-main section-main-content">
             <dl>
