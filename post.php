@@ -35,21 +35,21 @@
 	//帖子发布业务逻辑
 	}else if ($_POST) {
 		include "conn.php";
-		echo $_SESSION['uid'];
+		// echo $_SESSION['uid'];
 		mysql_query("SET NAMES UTF8");
 		$p_title = trim($_POST['p_title']);
 		$p_content = trim($_POST['p_content']);
 		$p_type = trim($_POST['p_category']);
 		$poster_id = trim($_SESSION['uid']);
-		echo $poster_id;
+		// echo $poster_id;
 		$p_time = trim(date("Y-m-d"));
 
 		$sql = "INSERT INTO $bbs_post(type_id,re_id,poster_id,title,content,r_num,p_time,r_time) VALUES 
 		('$p_type','','$poster_id','$p_title','$p_content','','$p_time','')";
 
 		$result = mysql_query($sql,$my_conn);
-		echo "success";
-		// echo "<meta http-equiv=\"refresh\" content=\"2; url=index.php\">\n";
+		echo "发表成功，两秒后返回";
+		echo "<meta http-equiv=\"refresh\" content=\"2; url=index.php\">\n";
 	}
 	
 ?>

@@ -1,9 +1,10 @@
-body {font-family:\5FAE\8F6F\96C5\9ED1;width: 100%;height:100%;background: url("../img/bbbg.png");}
+body {font-family:\5FAE\8F6F\96C5\9ED1;width: 100%;height:100%;background: url("../img/bbbg.png");background-attachment: fixed;}
 .mt60 {margin-top: 70px;}
 .mr10 {margin-right: 10px;}
 .mt10 {margin-bottom: 10px;}
 .mt40 {margin-top: 40px;}
 .mb170 {margin-bottom:170px;}
+.pt5 {padding-top: 5px;}
 .fl {float: left;}
 .fr {float: right;}
 .h_time {font-size: 18px;font-weight: normal;}

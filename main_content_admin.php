@@ -22,9 +22,9 @@
       }else{
         $type_id = $_GET['type_id'];    
         if ($type_id) {
-            $sql = "SELECT * FROM $bbs_post WHERE type_id = $type_id ORDER BY p_time DESC";
+            $sql = "SELECT * FROM $bbs_post WHERE type_id = $type_id ORDER BY id DESC";
         }else{
-            $sql = "SELECT * FROM $bbs_post WHERE type_id != 0 ORDER BY p_time DESC";
+            $sql = "SELECT * FROM $bbs_post WHERE type_id != 0 ORDER BY id DESC";
         }
         
         $result = mysql_query($sql,$my_conn);
