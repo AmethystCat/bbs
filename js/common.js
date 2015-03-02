@@ -8,8 +8,8 @@ $(function(){
 						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
 						'insertunorderedlist', '|', 'emoticons', 'image', 'link']
 				});
-	editor.sync();
-	console.log($('#p_content').html());
+	// editor.sync();
+	// console.log($('#p_content').html());
 
 	$("#sidebar").on("click","a",function(){
 		// $(this).siblings().removeClass('active');

@@ -15,7 +15,7 @@
           <div class="form-group">
             <label for="p_content">内容:</label>
             <textarea class="form-control" id="p_content" name="p_content" placeholder="请输入帖子内容" rows="10" required>
-              
+              请输入内容......
             </textarea>
           </div>
           <div class="form-group">
