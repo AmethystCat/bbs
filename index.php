@@ -4,7 +4,6 @@
   // $_SESSION['user']="aa";
   error_reporting(0);
   if ($_GET['status'] && $_GET['status'] == "loginout") {
-    # code...
     unset($_SESSION['user']);
     unset($_SESSION['uid']);
   }
@@ -19,6 +18,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="lib/themes/default/default.css" rel="stylesheet">
     <link href="css/common.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -57,9 +57,13 @@
     <?php include "footer.php"; ?>
     </div><!--/.container-->
     <input type="hidden" id="userflag" value="<?php echo $_SESSION['uid'] ?>">
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="lib/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    
+    <script src="lib/kindeditor-min.js"></script>
+    <script src="lib/zh_CN.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
   </body>
 </html>

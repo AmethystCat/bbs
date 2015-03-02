@@ -15,7 +15,7 @@
         //如果点击我的帖子选项则查询并加载相应的内容
         if ($_SESSION['uid']) {
           $uid = $_SESSION['uid'];
-          $sql = "SELECT * FROM $bbs_user,$bbs_post WHERE $bbs_user.id = $bbs_post.poster_id AND $bbs_user.id = $uid ORDER BY p_time DESC";
+          $sql = "SELECT * FROM $bbs_user,$bbs_post WHERE $bbs_user.id = $bbs_post.poster_id AND $bbs_user.id = $uid AND $bbs_post.type_id != 0 ORDER BY p_time DESC";
           $result = mysql_query($sql,$my_conn);
         }
         

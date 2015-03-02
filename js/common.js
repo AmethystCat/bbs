@@ -1,4 +1,15 @@
 $(function(){
+	var editor = KindEditor.create('#p_content', {
+					resizeType : 1,
+					allowPreviewEmoticons : false,
+					allowImageUpload : false,
+					items : [
+						'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+						'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+				});
+	editor.sync();
+	console.log($('#p_content').html());
 
 	$("#sidebar").on("click","a",function(){
 		// $(this).siblings().removeClass('active');

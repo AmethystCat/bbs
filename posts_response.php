@@ -14,9 +14,10 @@
 	$r_num = $_POST['r_num']+1;
 	// echo $r_num;
 	$content = trim($_POST['p_content']);
-	$re_id = trim($_POST['p_id']);
-
-	$sql1 = "UPDATE $bbs_post SET $bbs_post.r_num = $r_num, $bbs_post.r_time = date('Y-m-d')  WHERE  $bbs_post.id = $re_id";
+	$re_id = trim($_POST['p_id']);//p_id为主贴的id
+	$sql1 = "UPDATE $bbs_post SET $bbs_post.r_num = $r_num, $bbs_post.r_time = '" .date("Y-m-d"). "' WHERE  $bbs_post.id = $re_id";
+	// var_dump($_POST);
+	// exit();
 	$sql2 = "INSERT INTO $bbs_post(type_id,re_id,poster_id,title,content,r_num,p_time,r_time) VALUES ('0','$re_id','$poster_id','','$content','',CURDATE(),'')";
 	mysql_query($sql1,$my_conn);
 	mysql_query($sql2,$my_conn);

@@ -14,7 +14,9 @@
           </div>
           <div class="form-group">
             <label for="p_content">内容:</label>
-            <textarea class="form-control" id="p_content" name="p_content" placeholder="请输入帖子内容" rows="10" required></textarea>
+            <textarea class="form-control" id="p_content" name="p_content" placeholder="请输入帖子内容" rows="10" required>
+              
+            </textarea>
           </div>
           <div class="form-group">
             <label for="p_category">类别:</label>
@@ -24,7 +26,7 @@
               <option value="3">其他</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">提交</button>
         </form>
       </div>
     </div><!--/.col-xs-6.col-lg-4-->
@@ -38,6 +40,7 @@
 		// echo $_SESSION['uid'];
 		mysql_query("SET NAMES UTF8");
 		$p_title = trim($_POST['p_title']);
+    // echo $_POST['p_content'];
 		$p_content = trim($_POST['p_content']);
 		$p_type = trim($_POST['p_category']);
 		$poster_id = trim($_SESSION['uid']);

@@ -59,12 +59,17 @@
 		}else{
 			$sql2 = "INSERT INTO $bbs_user(name,pass,nickname,email,photo,reg_date,power) VALUES ('$user','$pass','','$email','$photo','$date',0)";
 			mysql_query("SET NAMES UTF8");
-			$result2 = mysql_query($sql2,$my_conn); 
+			mysql_query($sql2,$my_conn); 
+			//[HC 2015-3-1] sql语句中条件里的字符串变量要加上引号
+			$sql3 = "SELECT * FROM $bbs_user WHERE $bbs_user.name = '$user' AND $bbs_user.email = '$email'";
+			$result2 = mysql_query($sql3,$my_conn);
 			$tem = mysql_fetch_array($result2);
+			// var_dump($tem);
 			if ($result2) {
 				# code...
 				$_SESSION['user'] = $user;
-				$_SESSION['uid'] = $tem;
+				$_SESSION['uid'] = $tem[0];
+				// echo $_SESSION['uid'];
 				echo "注册用户成功，两秒后返回首页，若页面未跳转请点击<a href=\"index.php\">这里</a>返回\n";
 				echo "<meta http-equiv=\"refresh\" content=\"2; url=index.php\">\n";
 

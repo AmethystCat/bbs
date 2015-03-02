@@ -22,7 +22,6 @@
           </ul>
         <?php  
             if ($_SESSION['user']) {//如果用户已登录，则隐藏注册按钮，显示欢迎信息
-            # code...
             echo "<p class=\"navbar-text navbar-right\">欢迎您， <a href=\"#\" class=\"navbar-link\">".$_SESSION['user']."</a>&nbsp;&nbsp;<a href=\"index.php?status=loginout\" class=\"navbar-link\">退出</a></p>";
             echo "<input type=\"hidden\" value=\"".$_SESSION['uid']."\">";
           }else{  //否则显示登录和注册按钮

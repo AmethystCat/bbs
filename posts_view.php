@@ -11,7 +11,6 @@ if ($_GET['posts']) {
 
   $temp = 0;//记录楼层
   while ($row=mysql_fetch_array($result)) {
-    # code...
     $temp++;
     // var_dump($row);
 ?>
@@ -99,9 +98,11 @@ if ($_GET['posts']) {
               <input type="hidden" name="p_id" value= <?php echo $post_id; ?>>
               <input type="hidden" name="r_num" value= <?php echo $row['r_num']; ?>>
                 <label for="p_content">帖子回复区:</label>
-                <textarea class="form-control" name="p_content" id="p_content" placeholder="请输入帖子内容" rows="10" required></textarea>
+                <textarea class="form-control" name="p_content" id="p_content" placeholder="请输入帖子内容" rows="10" required>
+              &lt;strong&gt;请输入内容......&lt;/strong&gt;
+                </textarea>
               </div>
-              <button type="submit" class="btn btn-default">提交</button>
+              <button type="submit" id="posts_view_submit" class="btn btn-default">提交</button>
           </form>
         </div>
       </div>
