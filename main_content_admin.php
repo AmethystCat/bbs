@@ -32,8 +32,8 @@
       $newest = true;// 最新文章标识
       while ($row=mysql_fetch_array($result)) {
     ?>
-      <div class="row">
-        <div class="col-xs-6 col-lg-12 mt10">
+      <div class="row section-post-wraper">
+        <div class="col-xs-12 col-lg-12 mt10 section-col-set">
           <div class="section-summary">
             <h2>
               <a href="index.php?posts=<?php echo $row['id'] ?>"> <?php echo $row['title'] ?> </a>
@@ -50,7 +50,8 @@
             <p><?php echo $row[content] ?></p>
             <p>
               <a class="btn btn-default" href="index.php?posts=<?php echo $row['id'] ?>" role="button">更多 &raquo;</a>
-              <a class="btn btn-default del" href="delete.php?del=<?php echo $row['id'] ?>" role="button">删除 &raquo;</a>
+              <!-- <a class="btn btn-default del" href="delete.php?del=<?php echo $row['id'] ?>" role="button">删除 &raquo;</a> -->
+              <a class="btn btn-default del" id=<?php echo "del" .$row['id']?> role="button">删除 &raquo;</a>
             </p>
           </div><!--row-->
         </div><!--col-xs-6 col-lg-12 mt10-->

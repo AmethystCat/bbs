@@ -60,10 +60,8 @@
     <script src="lib/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="lib/bootstrap.min.js"></script>
-    
     <script src="lib/kindeditor-min.js"></script>
     <script src="lib/zh_CN.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>

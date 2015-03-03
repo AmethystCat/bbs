@@ -34,7 +34,7 @@
       while ($row=mysql_fetch_array($result)) {
     ?>
       <div class="row">
-        <div class="col-xs-6 col-lg-12 mt10">
+        <div class="col-xs-12 col-lg-12 mt10">
           <div class="section-summary">
             <h2>
               <a href="index.php?posts=<?php echo $row['id'] ?>"> <?php echo $row['title'] ?> </a>

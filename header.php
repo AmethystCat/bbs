@@ -19,6 +19,7 @@
             <li <?php if($_GET['action'] == "home" || !$_GET['action']){echo 'class="active"';} ?>><a href="index.php?action=home">最新</a></li>
             <li <?php if($_GET['action'] == "posting"){echo 'class="active"';} ?>><a href="index.php?action=posting">发帖</a></li>
             <li <?php if($_GET['action'] == "mine"){echo 'class="active"';} ?>><a href="index.php?action=mine">我的帖子</a></li>
+            <li><a href="#" id="test">ajax</a></li>
           </ul>
         <?php  
             if ($_SESSION['user']) {//如果用户已登录，则隐藏注册按钮，显示欢迎信息

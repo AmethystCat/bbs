@@ -1,13 +1,13 @@
 <?php  
 	error_reporting(0);
 	session_start();
-	if (!$_POST) {
+  if (!$_POST) {
 ?>
 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
   <div class="row">
     <div class="col-xs-6 col-lg-12 mt10">
       <div class="section-summary mb170">
-        <form role="form" action="post.php" method="post">
+        <form id="p_form" role="form" action="post.php" method="post">
           <div class="form-group">
             <label for="p_title">标题:</label>
             <input type="text" class="form-control" id="p_titie" name="p_title" placeholder="请输入帖子标题" required>
@@ -26,7 +26,7 @@
               <option value="3">其他</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-default">提交</button>
+          <button type="submit" id="p_submit" class="btn btn-default">提交</button>
         </form>
       </div>
     </div><!--/.col-xs-6.col-lg-4-->
@@ -51,8 +51,8 @@
 		('$p_type','','$poster_id','$p_title','$p_content','','$p_time','')";
 
 		$result = mysql_query($sql,$my_conn);
-		echo "发表成功，两秒后返回";
-		echo "<meta http-equiv=\"refresh\" content=\"2; url=index.php\">\n";
+		echo "发表成功，点击确定返回";
+		// echo "<meta http-equiv=\"refresh\" content=\"2; url=index.php\">\n";
 	}
 	
 ?>
