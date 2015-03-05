@@ -93,7 +93,7 @@ if ($_GET['posts']) {
         ?>
         <!--以下为发表回复区域-->
         <div class="section-write-response mt40">
-          <form role="form" action="posts_response.php" method="post">
+          <form role="form" id="response_form" action="posts_response.php" method="post">
               <div class="form-group">
               <input type="hidden" name="p_id" value= <?php echo $post_id; ?>>
               <input type="hidden" name="r_num" value= <?php echo $row['r_num']; ?>>

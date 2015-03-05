@@ -3,11 +3,11 @@
 	// echo "string";
 
 	include "conn.php";
-	mysql_query("SET NAMES UTF8");
+	// $DB = new DBA;
 
 	$did = $_POST['del'];
 	// echo $did;
-	$sql = "DELETE FROM $bbs_post WHERE $bbs_post.id = $did OR $did = $bbs_post.re_id";
+	$sql = "DELETE FROM $bbs_post WHERE id = $did OR $did = re_id";
 
 	$result = mysql_query($sql,$my_conn);
 	$msg=["msg"=>"success"];

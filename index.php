@@ -55,6 +55,7 @@
         ?>
       </div><!--/row-->
     <?php include "footer.php"; ?>
+    <?php include "dialog.php"; ?>
     </div><!--/.container-->
     <input type="hidden" id="userflag" value="<?php echo $_SESSION['uid'] ?>">
     <script src="lib/jquery-1.11.1.min.js"></script>

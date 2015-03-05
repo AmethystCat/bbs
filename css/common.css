@@ -3,10 +3,12 @@ body {font-family:\5FAE\8F6F\96C5\9ED1;width: 100%;height:100%;background: url("
 .mr10 {margin-right: 10px;}
 .mt10 {margin-bottom: 10px;}
 .mt40 {margin-top: 40px;}
+.mt100 {margin-top: 100px;}
 .mb170 {margin-bottom:170px;}
 .pt5 {padding-top: 5px;}
 .fl {float: left;}
 .fr {float: right;}
+.br5 {border-radius: 5px;}
 .h_time {font-size: 18px;font-weight: normal;}
 .section-summary {padding:10px;border: 1px solid #ccc;border-radius: 5px;background:rgba(238, 238, 238, 0.82);}
 .error-mes {width: 160px;font-size: 16px;font-weight: bold;;color: red;}
@@ -19,3 +21,5 @@ h2.catagory {margin-top: 0;padding: 10px;background: #fff;text-align: center;}
 .section-main-content dt img {display: block;width: 80px;height: 70px;margin: 3px auto 0;}
 .section-main-content dt span {display: block;text-align: center;}
 .section-post-time {position: absolute;bottom: 0;right: 0;}
+
+.bb0 {border-bottom: none;}

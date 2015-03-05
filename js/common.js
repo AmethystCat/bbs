@@ -10,12 +10,6 @@ $(function(){
 						'insertunorderedlist', '|', 'emoticons', 'image', 'link']
 				});
 
-	$("#sidebar").on("click","a",function(){
-		// $(this).siblings().removeClass('active');
-		// $(this).addClass('active');
-		// var tid = $(this).attr("id");
-	});
-
 	/*管理员删除帖子的请求*/
 	$(".container").on("click",".del",function(e){
 		e.stopPropagation();
@@ -55,59 +49,81 @@ $(function(){
 			return false;
 		}
 	});
-});
 
 /*发帖操作*/
 $("#p_form").submit(function(event) {
+	//[2015-3-5]在序列化表单数据的时候要先将富文本编辑器中的内容与textarea同步，否则
+	//正确取得用户输入的值
+	// Util.editorSync(editor);
+	editor.sync();
+	console.log("aa");
 	$.ajax({
 		url: 'post.php',
 		type: 'POST',
-		data: $("#p_form").serialize(),
+		data: $("#p_form").serialize()
 	})
 	.done(function(data) {
-		if (confirm(data)) {
-			window.location.href = "index.php";
-		};
+		//data:发布成功啦，亲
+		Util.pop(data,true);
 	})
 	.fail(function() {
-		console.log("error");
+		Util.pop(data.responseText);
 	})
-	.always(function() {
-		console.log("complete");
-	});
+	
 	return false;
 });
 
-
-function c_img(){
-	var imgT = document.getElementById("img1");
-	var selectV = document.getElementById("photo");
-	imgT.src = "img/"+selectV.value+".gif";
-}
-
-/*登录模块*/
-function login(){
-	var user_email = $("#email").val(),
-	    password = $("#pass").val(),
-	    url = './login_b.php';
-
-	$.ajax({
-		url: url,
-		type: "post",
-		dataType: "json",
-		data: {
-			email: user_email,
-			pass: password
-		},
-		success:function(data){
-			console.log(data);
-			console.log(decodeURI(data.msg));
-			$("#login_info").text(decodeURI(data.msg));
-		},
-		error:function(data) {
-			// body...
-			console.log(data.msg);
-		}
+/*发帖回复*/
+	$("#response_form").submit(function(event) {
+		editor.sync();
+		$.ajax({
+			url: 'posts_response.php',
+			type: 'POST',
+			dataType: 'JSON',
+			data: $("#response_form").serialize()
+		})
+		.done(function(data) {
+			console.log("success");
+			Util.pop(data.msg,true,"refresh");
+		})
+		.fail(function() {
+			console.log("error");
+			Util.pop(data.responseText,false)
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		return false;
 	});
-	return false;
-}
+
+});
+
+/*工具封装*/
+(function(w){
+	var U = {
+		editorSync : function(et){
+			et.sync();
+		},
+		goIndex : function(page){
+			(page === "refresh") ? window.location.reload() : window.location.href = page || "index.php";
+		},
+		c_img : function(){
+			var imgT = document.getElementById("img1");
+			var selectV = document.getElementById("photo");
+			imgT.src = "img/"+selectV.value+".gif";
+		},
+		pop : function(msg,bool,page){
+			$(".modal-title").html(msg);
+			$("#popBox").modal("show");
+			setTimeout(function() {
+				//this -> window
+				// console.dir(this);
+				if (bool) {
+					U.goIndex(page);
+				}
+				$("#popBox").modal("hide");
+			},2000)
+		}
+	};
+	return w.Util = U;
+})(window)

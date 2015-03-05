@@ -47,3 +47,6 @@ body {
 
 .error-mess {width: 160px;font-size: 16px;font-weight: bold;;color: red;}
 .photo {display:block;width: 80px;height: 80;margin: 5px auto;}
+
+.bb0 {border-bottom: none;}
+.mt100 {margin-top: 100px;}

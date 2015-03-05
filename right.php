@@ -2,7 +2,7 @@
 	error_reporting(0);	
 ?>
 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-	<h2 class="catagory">帖子分类</h2>
+	<h2 class="catagory br5">帖子分类</h2>
       <div class="list-group">
         <!-- <a href="index.php?type_id=0" class="list-group-item">全部</a>
         <a href="index.php?type_id=1" class="list-group-item active">生活</a>

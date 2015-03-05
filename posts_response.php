@@ -2,13 +2,14 @@
 	error_reporting(0);
 	session_start();
 	include "conn.php";
-	mysql_query("SET NAMES UTF8");
+	// mysql_query("SET NAMES UTF8");
 
 	if ($_SESSION['user']) {
 		$poster_id = trim($_SESSION['uid']);
 	}else{
 		echo "请登录后再回复，亲";
 		echo "<meta http-equiv=\"refresh\" content=\"2;url=index.php?posts=".$_POST['p_id']."\">\n";
+		exit();
 	}
 	// $re_id = trim($_POST['posts']);
 	$r_num = $_POST['r_num']+1;
@@ -22,6 +23,7 @@
 	mysql_query($sql1,$my_conn);
 	mysql_query($sql2,$my_conn);
 
-	echo "回复成功，两秒后返回帖子页面";
-	echo "<meta http-equiv=\"refresh\" content=\"2;url=index.php?posts=".$_POST['p_id']."\">\n";
+	$msg = ["msg"=>"回复成功，两秒后返回帖子页面"];
+	echo json_encode($msg);
+	// echo "<meta http-equiv=\"refresh\" content=\"2;url=index.php?posts=".$_POST['p_id']."\">\n";
 ?>
