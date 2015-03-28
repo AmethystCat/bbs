@@ -107,11 +107,6 @@ $("#p_form").submit(function(event) {
 		goIndex : function(page){
 			(page === "refresh") ? window.location.reload() : window.location.href = page || "index.php";
 		},
-		c_img : function(){
-			var imgT = document.getElementById("img1");
-			var selectV = document.getElementById("photo");
-			imgT.src = "img/"+selectV.value+".gif";
-		},
 		pop : function(msg,bool,page){
 			$(".modal-title").html(msg);
 			$("#popBox").modal("show");

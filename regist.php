@@ -25,12 +25,12 @@
 		<select id="photo" name="photo" class="form-control" onchange="Util.c_img();">
 			  <?php  
 			  	echo "<option value=\"0\">默认头像</option>";
-			  	for ($i=1; $i < 13; $i++) { 
+			  	for ($i=1; $i < 14; $i++) { 
 			  		echo "<option value=\"".$i."\">图像".$i."</option>";
 			  	}
 			  ?>
 		</select>
-		<img class="photo" src="img/0.gif" id="img1">
+		<img class="photo" src="img/0.jpg" id="img1">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Regist</button>
       </form>
       <span class="center-block error-mess"><?php echo $error_mess ?></span>

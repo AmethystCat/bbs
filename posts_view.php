@@ -29,7 +29,7 @@ if ($_GET['posts']) {
               <!--用户信息（头像，名称）-->
               <dt>
                 <!--头像-->
-                <img class="section-head-portrait" src=<?php if(!$row['photo']){echo "img/bbg.png" ;} else { echo "img/".$row['photo'].".gif";} ?> alt="头像">
+                <img class="section-head-portrait" src=<?php if(!$row['photo']){echo "img/bbg.png" ;} else { echo "img/".$row['photo'].".jpg";} ?> alt="头像">
                 <!--用户名，并提示为楼主-->
                 <span><?php echo $row['name']; ?></span>
               </dt>
@@ -66,7 +66,7 @@ if ($_GET['posts']) {
               <!--用户信息（头像，名称）-->
               <dt>
                 <!--头像-->
-                <img class="section-head-portrait" src=<?php if(!$row2['photo']){echo "img/bbg.png" ;} else { echo "img/".$row2['photo'].".gif";} ?> alt="头像">
+                <img class="section-head-portrait" src=<?php if(!$row2['photo']){echo "img/bbg.png" ;} else { echo "img/".$row2['photo'].".jpg";} ?> alt="头像">
                 <!--用户名，并提示为楼主-->
                 <span><?php echo $row2['name'] ?></span>
               </dt>

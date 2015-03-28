@@ -7,7 +7,7 @@
 		c_img : function(){
 			var imgT = document.getElementById("img1");
 			var selectV = document.getElementById("photo");
-			imgT.src = "img/"+selectV.value+".gif";
+			imgT.src = "img/"+selectV.value+".jpg";
 		},
 		pop : function(msg,bool){
 			$(".modal-title").html(msg);

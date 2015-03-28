@@ -18,7 +18,7 @@
 
 
 
-	function login_validate($DB)
+	function login_validate()
 	{
 		include "conn.php";
 		if ($_SESSION['user']) {
@@ -54,7 +54,7 @@
 
 	
 
-	function regist_validate($DB)
+	function regist_validate()
 	{
 		include "conn.php";
 		//过滤掉变量两端的空格
